@@ -1,0 +1,87 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: OUTILS - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE5E.tmp" with contents
+[
+/nologo /G3 /MTd /W3 /GX /Z7 /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fr".\Debug/" /Fp".\Debug/Outils.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\BSpline.cpp"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\COLOR.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\ECHANT.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\ETIQUETT.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\FOURIER.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\INVERSE.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\MIROIR.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\Morpho.cpp"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\ROTATION.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\SEGNOP.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\SEUIL.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\VECTEUR.CPP"
+"C:\users\Cedric Lemaitre\code curvilineaire\WINSEG11\OUTILS\WAVELET.CPP"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE5E.tmp" 
+Creating temporary file "C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE5F.tmp" with contents
+[
+/nologo /out:".\Debug\Outils.lib" 
+".\Debug\BSpline.obj"
+".\Debug\COLOR.OBJ"
+".\Debug\ECHANT.OBJ"
+".\Debug\ETIQUETT.OBJ"
+".\Debug\FOURIER.OBJ"
+".\Debug\INVERSE.OBJ"
+".\Debug\MIROIR.OBJ"
+".\Debug\Morpho.obj"
+".\Debug\ROTATION.OBJ"
+".\Debug\SEGNOP.OBJ"
+".\Debug\SEUIL.OBJ"
+".\Debug\VECTEUR.OBJ"
+".\Debug\WAVELET.OBJ"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE5F.tmp"
+<h3>Output Window</h3>
+Compiling...
+BSpline.cpp
+COLOR.CPP
+ECHANT.CPP
+ETIQUETT.CPP
+FOURIER.CPP
+INVERSE.CPP
+MIROIR.CPP
+Morpho.cpp
+ROTATION.CPP
+SEGNOP.CPP
+SEUIL.CPP
+VECTEUR.CPP
+WAVELET.CPP
+Creating library...
+Creating temporary file "C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE60.tmp" with contents
+[
+/nologo /o".\Debug/Outils.bsc" 
+".\Debug\BSpline.sbr"
+".\Debug\COLOR.SBR"
+".\Debug\ECHANT.SBR"
+".\Debug\ETIQUETT.SBR"
+".\Debug\FOURIER.SBR"
+".\Debug\INVERSE.SBR"
+".\Debug\MIROIR.SBR"
+".\Debug\Morpho.sbr"
+".\Debug\ROTATION.SBR"
+".\Debug\SEGNOP.SBR"
+".\Debug\SEUIL.SBR"
+".\Debug\VECTEUR.SBR"
+".\Debug\WAVELET.SBR"]
+Creating command line "bscmake.exe @C:\DOCUME~1\CEDRIC~1\LOCALS~1\Temp\RSPE60.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Outils.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

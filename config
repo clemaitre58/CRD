@@ -1,0 +1,228 @@
+MAKEFLAGS = '-l -r -S'
+
+R ?= a64-r2006
+
+ENABLE_DEBUG ?= 0
+
+.PHONY: all clean install
+
+WBS_SOFT_DIR ?= /project/wbs-demo/wbs
+
+# wbs software root directory 
+ROOT_SOFT_DIR = $(WBS_SOFT_DIR)
+
+include $(ROOT_SOFT_DIR)/versiondefs
+
+# wbs-demo directory
+LIBS_ROOT_DIR = $(ROOT_SOFT_DIR)
+
+# wbs-demo directories
+WBS_DEMO_RELEASE_DIR = $(ROOT_SOFT_DIR)/wbs-demo
+MEX_INSTALL_DIR = $(WBS_DEMO_RELEASE_DIR)/mex/$(ARCH)/$(MATLAB_RELEASE)
+
+# installation directories of DROR libraries
+BINARIES_ROOT = $(ROOT_SOFT_DIR)/bin
+LIBS_INCLUDES = $(ROOT_SOFT_DIR)/include
+I = $(ROOT_SOFT_DIR)/src
+LIBS_LIB_DIR = $(ROOT_SOFT_DIR)/lib/$(ARCH)
+L = $(ROOT_SOFT_DIR)
+EXT_LIBS_DIR = . # $(ROOT_SOFT_DIR)/lib_ext/$(ARCH)
+EXT_INCLUDE_DIR = $(ROOT_SOFT_DIR)/include_ext
+
+MEX = $(MATLAB_HOME)/bin/mex
+
+# C compiler flags
+
+#DEBUG_FLAGS = -DPUBLIC_EXTREMA 
+#DEBUG_FLAGS = -DEXTREMA_EXPERIMENTAL
+
+# optimisation on no debuging
+#OPTIMIZATION_FLAGS = -O3 -DNDEBUG -fomit-frame-pointer
+#OPTIMIZATION_FLAGS = -mmmx -msse2 -march=k8 -O3 -DNDEBUG -fomit-frame-pointer
+
+ifeq ($(ENABLE_DEBUG),1)
+  # debuging
+  OPTIMIZATION_FLAGS = -g
+else
+  OPTIMIZATION_FLAGS = -O3 -fomit-frame-pointer
+endif
+
+CFLAGS = -Wall -pipe $(DEBUG_FLAGS) $(OPTIMIZATION_FLAGS) $(ARCH_FLAGS)
+CXXFLAGS = -Wall -pipe $(DEBUG_FLAGS) $(OPTIMIZATION_FLAGS) $(ARCH_FLAGS)
+
+# used image libs
+IMAGE_LIBS_CFLAGS = -DWITH_LIBPNG -DWITH_LIBJPEG -DWITH_LIBTIFF
+IMAGE_LIBS_LFLAGS = -lpng -ltiff -ljpeg -lz
+
+# archiver
+AR = ar
+
+# command to remove files
+RM = /bin/rm -rf
+
+# command to move files
+MV = /bin/mv -f
+
+# command to copy files
+CP = /bin/cp
+
+INSTALL = /usr/bin/install
+
+# common makefile rules
+
+LDDIRS = $(addprefix -L$(LIBS_ROOT_DIR)/src/, $(IMPORTS))
+LDIMPORTS = $(addsuffix .$(ARCH).$(MATLAB_RELEASE), $(addprefix -l, $(notdir $(IMPORTS))))
+
+C_MEX_FLAGS = $(DEBUG_FLAGS) CC=$(CC) CXX=$(CC) LD=$(CC) -DMATLAB_$(MATLAB_RELEASE)
+CXX_MEX_FLAGS = $(DEBUG_FLAGS) CC=$(CXX) CXX=$(CXX) LD=$(CC) -DMATLAB_$(MATLAB_RELEASE)
+MEX_TARGETS = $(MEX_FILES)
+GARBAGE = $(MEX_TARGETS)
+
+%$(MEX_SUFFIX): %.mex.cpp
+	$(MEX) $(CXX_MEX_FLAGS) CFLAGS='$$CFLAGS $(CFLAGS)' CXXFLAGS='$$CXXFLAGS $(CXXFLAGS)' $(INCLUDES) $< -output $@ $(MEX_CPPFILES) $(LDDIRS) $(LDLIBS) $(LDIMPORTS) $(LDFLAGS)
+
+%$(MEX_SUFFIX): %.mex.c
+	$(MEX) $(C_MEX_FLAGS) CFLAGS='$$CFLAGS $(CFLAGS)' CXXFLAGS='$$CXXFLAGS $(CXXFLAGS)' $(INCLUDES) $< -output $@ $(MEX_CFILES) $(LDDIRS) $(LDLIBS) $(LDIMPORTS) $(LDFLAGS)
+
+%$(OBJ_SUFFIX): %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+%$(OBJ_SUFFIX): %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+OBJ_FILES = $(CPP_FILES:.cpp=$(OBJ_SUFFIX)) $(C_FILES:.c=$(OBJ_SUFFIX))
+
+BOBJ_FILES = $(BCPP_FILES:.cpp=$(OBJ_SUFFIX)) $(BC_FILES:.c=$(OBJ_SUFFIX))
+
+LIB_NAME = $(addsuffix $(LIB_SUFFIX), $(addprefix lib, $(basename $(LIB))))
+
+ifneq (,$(findstring M5, $(MEX_TARGETS)))
+	MEX_FILES += $(MEX5_FILES)
+endif
+
+ifneq (,$(findstring M6, $(MEX_TARGETS)))
+	MEX_FILES += $(MEX6_FILES)
+endif
+
+################################################################################
+# LIBRARY creation template
+################################################################################
+
+define do_libs
+  $(foreach lib, $(LIBS), $(eval $(call LIBRARY_template,$(lib))))
+endef
+
+define LIBRARY_template
+
+$(1)_OBJS = $($(1)_CPPFILES:.cpp=$(OBJ_SUFFIX)) $($(1)_CFILES:.c=$(OBJ_SUFFIX))
+$(1)_OBJS: INCLUDES += $(1)_INCLUDES
+$(1)_NAME = lib$(1)$(LIB_SUFFIX)
+lib$(1)$(LIB_SUFFIX): $$($(1)_OBJS)
+	$(AR) crs $$@ $$($(1)_OBJS)
+install_$(1):
+	$(INSTALL) -d $(LIBS_LIB_DIR)
+	$(INSTALL) -m 644 lib$(1)$(LIB_SUFFIX) $(LIBS_LIB_DIR)
+	$(INSTALL) -d $(LIBS_INCLUDES)/$(1)
+	$(INSTALL) -m 644 *.h* $(LIBS_INCLUDES)/$(1)
+
+# add to default todo
+all: lib$(1)$(LIB_SUFFIX) 
+install: install_$(1)
+# collect garbage
+GARBAGE += $$($(1)_OBJS) lib$(1)$(LIB_SUFFIX)
+LIBRARIES += $(addprefix lib, $(1)$(LIB_SUFFIX))
+dep: $$($(1)_CPPFILES) $$($(1)_CFILES)
+	makedepend -Y -a -f- -o$(OBJ_SUFFIX)  -- $(CFLAGS) $(CXXFLAGS) $(INCLUDES) -- $$^ 2> /dev/null >> depend$(DEP_SUFFIX)
+endef
+
+################################################################################
+# Matlab MEX build template
+################################################################################
+define gen_library_deps
+   $(foreach libname, $(1), $(LIBS_ROOT_DIR)/src/$(dir $(libname))$(notdir $(libname))/lib$(notdir $(libname) )$(LIB_SUFFIX) )
+endef
+
+define MEX_template
+
+# add target specific variables
+$(1)$(MEX_SUFFIX): MEX_CPPFILES += $$($(1)_CPPFILES)
+$(1)$(MEX_SUFFIX): MEX_CFILES += $$($(1)_CFILES)
+$(1)$(MEX_SUFFIX): LDIMPORTS += $(LDIMPORTS) $(addsuffix .$(ARCH).$(MATLAB_RELEASE), $(addprefix -l, $(basename $(notdir $($(1)_IMPORTS)))))
+$(1)$(MEX_SUFFIX): LDDIRS := $(LDDIRS) $(addprefix -L$(LIBS_ROOT_DIR)/src/, $($(1)_LIBS)) $(addprefix -L$(LIBS_ROOT_DIR)/src/, $($(1)_IMPORTS))
+$(1)$(MEX_SUFFIX): LDLIBS := $(LDLIBS) $(addsuffix .$(ARCH).$(MATLAB_RELEASE), $(addprefix -l, $(basename $(notdir $($(1)_LIBS)))))
+$(1)$(MEX_SUFFIX): LDFLAGS := $(LDFLAGS) $($(1)_LDFLAGS)
+$(1)$(MEX_SUFFIX): INCLUDES += $$($(1)_INCLUDES)
+$(1)_SRCFILES = $(wildcard $(1).mex.c) $(wildcard $(1).mex.cpp)
+$(1)$(MEX_SUFFIX): $$($(1)_CFILES) $$($(1)_CPPFILES) $(call gen_library_deps, $($(1)_LIBS)) $(call gen_library_deps, $($(1)_IMPORTS)) $(call gen_library_deps, $(LIBS)) $(call gen_library_deps, $(IMPORTS))
+install_$(1): $(MEX_TARGETS)
+	$(INSTALL) -d $(MEX_INSTALL_DIR)
+	$(INSTALL) $(1)$(MEX_SUFFIX) $(MEX_INSTALL_DIR)/$(1)$(MEX_EXT)
+
+# add to default todo
+all: $(1)$(MEX_SUFFIX)
+install: install_$(1)
+# collect garbage
+GARBAGE += $$($(1)_OBJS) $(1)$(MEX_SUFFIX)
+
+# generate dependencies targets
+dep-$(1): $$($(1)_CPPFILES) $$($(1)_CFILES) $$($(1)_SRCFILES)
+dep-$(1): 
+	makedepend -Y -a -f- -o$(MEX_SUFFIX) -- $(CFLAGS) $(CXXFLAGS) $(INCLUDES) -I$(MATLAB_HOME)/extern/include -I$(MATLAB_HOME)/simulink/include -- $$^ 2> /dev/null >> depend$(DEP_SUFFIX)
+dep: dep-clear dep-$(1)
+
+endef
+
+define do_mex
+  $(foreach mex,$(basename $(MEX_TARGETS)),$(eval $(call MEX_template,$(mex))))
+endef
+
+################################################################################
+# PROGRAM build template
+################################################################################
+
+define do_programs
+   $(foreach prog,$(PROGRAMS),$(eval $(call PROGRAM_template,$(prog))))
+endef
+
+define PROGRAM_template
+
+$(1)_OBJS =$($(1)_CPPFILES:.cpp=$(OBJ_SUFFIX)) $($(1)_CFILES:.c=$(OBJ_SUFFIX))
+$(1)_LDLIBS += $(addsuffix .$(ARCH).$(MATLAB_RELEASE), $(addprefix -l, $(basename $(notdir $($(1)_LIBS)))))
+$(1)_LDIMPORTS += $(addsuffix .$(ARCH).$(MATLAB_RELEASE), $(addprefix -l, $(basename $(notdir $($(1)_IMPORTS)))))
+$(1)_LDDIRS += $(addprefix -L$(LIBS_ROOT_DIR)/src/, $($(1)_LIBS)) $(addprefix -L$(LIBS_ROOT_DIR)/src/, $($(1)_IMPORTS))
+$(1)_OBJS: INCLUDES += $$($(1)_INCLUDES)
+# main rule for building binary
+$(1): INCLUDES += $$($(1)_INCLUDES)
+$(1): $$($(1)_OBJS) $$($(1)_CPPFILES) $(call gen_library_deps, $($(1)_LIBS)) $(call gen_library_deps, $($(1)_IMPORTS)) $(call gen_library_deps, $(LIBS)) $(call gen_library_deps, $(IMPORTS))
+	$(CXX) $(CXXFLAGS) $$(INCLUDES) $$($(1)_OBJS) -o $(1)$(BIN_EXT) $$($(1)_LDDIRS) $(LDDIRS) $$($(1)_LDLIBS) $(LDLIBS) $$($(1)_LDIMPORTS) $(LDIMPORTS) $$($(1)_LDFLAGS) $(LDFLAGS)
+install_$(1):
+	$(INSTALL) -d $(BINARIES_ROOT)
+	$(INSTALL) -s $(1)$(BIN_EXT) $(BINARIES_ROOT)
+# add to default todo
+all: $(1)
+install: install_$(1)
+dep: $$($(1)_CPPFILES) $$($(1)_CFILES)
+# collect garbage
+GARBAGE += $$($(1)_OBJS) $(1)
+endef
+
+################################################################################
+# standard targets 
+################################################################################
+
+all:
+
+install: all
+
+clean:
+	$(RM) $(GARBAGE)
+
+dep-clear: 
+	$(RM) depend$(DEP_SUFFIX)
+
+dep:
+
+%$(OBJ_SUFFIX): %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+-include depend$(DEP_SUFFIX)

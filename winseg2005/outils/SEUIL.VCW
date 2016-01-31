@@ -1,0 +1,11 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+External=1
+DebugBuildCmd=NMAKE /f SEUIL.CPP
+ReleaseBuildCmd=NMAKE /f SEUIL.CPP
+RebuildOption=/a
+BuildMode=1
+TargetName=C:\USERS\CHRIS\MSVC\DLL\SEUIL.EXE
+BrkptCount=0
+WatchCount=0

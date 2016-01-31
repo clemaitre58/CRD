@@ -1,0 +1,2080 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "message.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Anglais (États-Unis) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_DATE       "Date"
+    ID_INDICATOR_TIME       "Time"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_CAPS       "CAPS"
+    ID_INDICATOR_NUM        "NUM"
+END
+
+#endif    // Anglais (États-Unis) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Français (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ZONE DIALOG  100, 100, 145, 114
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Sélection d'une zone"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_i1,32,21,37,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_j1,88,21,37,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_i2,31,65,37,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_j2,89,65,37,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,16,95,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,95,50,14
+    LTEXT           "I",IDC_STATIC,19,23,8,11
+    GROUPBOX        "pixel bas-gauche",IDC_STATIC,4,5,137,41
+    GROUPBOX        "pixel haut-droit",IDC_STATIC,4,49,137,41
+    LTEXT           "I",IDC_STATIC,19,66,8,11
+    LTEXT           "J",IDC_STATIC,78,24,8,11
+    LTEXT           "J",IDC_STATIC,78,66,8,11
+END
+
+IDD_SEUIL DIALOG  200, 200, 185, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "SEUIL DE BINARISATION"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SEUIL,33,10,30,15,ES_AUTOHSCROLL
+    CONTROL         "Niveau Haut",IDC_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,35,58,13
+    DEFPUSHBUTTON   "OK",IDOK,41,63,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,93,63,50,14
+    LTEXT           "if (niveau<Seuil) niveau  = 0; ",IDC_STATIC,75,12,99,15
+    LTEXT           "Seuil",IDC_STATIC,5,12,22,13
+    LTEXT           "else",IDC_STATIC,74,26,19,14
+    LTEXT           "if (checked) niveau = 255",IDC_STATIC,75,39,96,17
+END
+
+IDD_CARAC_ZONE DIALOG  100, 100, 185, 68
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "CARACTERISTIQUES DE LA SEQUENCE"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NBIMAGE,71,9,35,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TEMPS,71,44,35,18,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,11,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,30,50,14
+    LTEXT           "Nombre d'images dans la séquence (maxi 100)",IDC_STATIC,2,4,64,29
+    LTEXT           "Temps entre chaque image [ms]",IDC_STATIC,3,44,66,18
+END
+
+IDD_LIMITE_SEQUENCE DIALOG  100, 100, 201, 58
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Définir les limites de la séquence à enregistrer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NUM2,152,9,33,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NUM1,60,9,33,18,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,50,40,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,102,40,50,14
+    LTEXT           "Numéro de la première image",IDC_STATIC,4,9,51,19
+    LTEXT           "Numéro de la dernière image",IDC_STATIC,101,9,51,19
+END
+
+IDD_SEUIL2 DIALOG  200, 200, 179, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "SEUILS DE BINARISATION"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SEUIL1,45,14,30,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SEUIL2,45,38,30,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,34,66,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,96,66,50,14
+    LTEXT           "Seuil Bas",IDC_STATIC,4,17,33,7
+    LTEXT           "Seuil Haut",IDC_STATIC,4,40,38,11
+    LTEXT           "if (Bas<=niveau<=Haut)    niveau = 255;                else niveau = 0;",IDC_STATIC,94,20,85,31
+END
+
+IDD_LARGHAUT DIALOG  100, 50, 151, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dimensions de l'image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LARG,38,6,32,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HAUT,38,24,32,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TITRE,4,63,90,14,ES_AUTOHSCROLL
+    CONTROL         "Noir et blanc",IDC_NB,"Button",BS_AUTORADIOBUTTON | WS_GROUP,17,100,68,11
+    CONTROL         "Couleur",IDC_COLOR,"Button",BS_AUTORADIOBUTTON,17,117,68,11
+    DEFPUSHBUTTON   "OK",IDOK,94,8,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,25,50,14
+    LTEXT           "Largeur",IDC_STATIC,4,8,31,15
+    LTEXT           "Hauteur",IDC_STATIC,4,26,34,15
+    LTEXT           "Titre de la fenêtre",IDC_STATIC,5,50,75,12
+    GROUPBOX        "Type",IDC_STATIC,4,87,89,45
+END
+
+IDD_LHFLOAT DIALOG  100, 50, 151, 52
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dimensions de l'image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LARG,61,7,23,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HAUT,61,25,23,16,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,94,8,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,25,50,14
+    LTEXT           "Largeur",-1,6,9,31,15
+    LTEXT           "Hauteur\nou Nb Lignes",-1,6,26,45,25
+END
+
+IDD_ECHELLE DIALOG  100, 100, 143, 49
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Affectation de l'échelle"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,46,15,34,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,96,7,30,14
+    PUSHBUTTON      "Cancel",IDCANCEL,96,25,30,14
+    LTEXT           "Echelle :",IDC_STATIC,13,18,33,15
+END
+
+IDD_INFO_TRAITEMENT DIALOGEX 100, 100, 201, 102
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "INFO TRAITEMENT"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_Nom_Traitement,7,17,187,13,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_COMMENTAIRES,7,49,187,46,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL,WS_EX_RTLREADING
+    LTEXT           "Nom TRAITEMENT",IDC_STATIC,65,7,67,9
+    LTEXT           "Commentaires",IDC_STATIC,73,39,48,9
+END
+
+IDD_FACTEUR_ZOOM DIALOG  0, 0, 125, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Facteur de Zoom"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_FACTEUR_ZOOM,77,15,27,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,68,45,50,14
+    CTEXT           "Facteur de grossissement",IDC_STATIC,15,15,59,17
+END
+
+IDD_DIALOG3 DIALOG  100, 100, 185, 48
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Annulation des basses fréquences"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_REPONSE,86,16,22,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,14
+    LTEXT           "Profondeur souhaitée",IDC_STATIC,3,18,73,12
+END
+
+IDD_DIALSEQ DIALOG  220, 50, 229, 77
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Séquence"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Stop",IDOK,125,56,46,14
+    PUSHBUTTON      "Quit",IDCANCEL,173,56,47,14
+    PUSHBUTTON      "<<",IDC_BUTTON3,7,56,34,14
+    PUSHBUTTON      ">",IDC_BUTTON2,43,56,46,14
+    PUSHBUTTON      ">>",IDC_BUTTON1,91,56,32,14
+    EDITTEXT        IDC_EDIT1,104,7,21,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | TBS_ENABLESELRANGE | WS_BORDER | WS_TABSTOP,7,23,215,28
+    LTEXT           "Static",IDC_TEXT,158,7,64,15
+END
+
+IDD_PARAM DIALOG  0, 0, 300, 262
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Choix des paramètres"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST1,5,29,113,207,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      " Ajouter  >>",IDC_AJOUTER,127,114,46,15
+    PUSHBUTTON      "<< Enlever",IDC_ENLEVER,127,143,46,15
+    LISTBOX         IDC_LIST2,177,28,113,207,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Sauvegarder",IDOK,80,242,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,147,242,50,14
+    CTEXT           "Paramètres disponibles",IDC_STATIC,13,15,88,11
+    CTEXT           "Paramètres choisis",IDC_STATIC,186,14,88,11
+END
+
+IDD_DIALVAL DIALOG  0, 0, 129, 53
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Entrez une valeur signée"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,50,10,28,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,10,33,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,69,33,50,14
+END
+
+IDD_DIAL2VAL DIALOG  0, 0, 244, 79
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Paramètres à visualiser ( de 0 à NPAR -1)"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO1,1,31,118,198,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,122,31,118,198,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Ok",IDOK,68,57,45,13
+    PUSHBUTTON      "Cancel",IDCANCEL,125,57,50,14
+    LTEXT           "Premier paramètre",IDC_STATIC,23,20,71,10
+    LTEXT           "Deuxième paramètre",IDC_STATIC,141,19,78,10
+END
+
+IDD_DIALPARZ DIALOG  200, 200, 182, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Recouvrement des histogrammes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,65,38,50,14
+    CTEXT           "",IDC_RECOUVR0,125,7,30,11,SS_SUNKEN
+    CTEXT           "",IDC_RECOUVR1,125,22,30,11,SS_SUNKEN
+    RTEXT           "",IDC_PARAM0,7,7,117,11
+    RTEXT           "",IDC_PARAM1,7,22,117,11
+    LTEXT           "%",IDC_STATIC,161,7,14,11
+    LTEXT           "%",IDC_STATIC,161,22,14,11
+END
+
+CG_IDD_PROGRESS DIALOG  0, 0, 186, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,67,42,50,14
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS,"msctls_progress32",WS_BORDER,15,18,154,13
+    LTEXT           " 0 %",CG_IDC_PROGDLG_PERCENT,83,7,18,8
+END
+
+IDD_SetT DIALOG  0, 0, 140, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "S et T"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,49,7,28,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,49,25,28,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,83,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,83,25,50,14
+    LTEXT           "Valeur de S",IDC_STATIC,7,7,41,13
+    LTEXT           "Valeur de T",IDC_STATIC,7,26,42,13
+END
+
+IDD_Hysteresis DIALOGEX 0, 0, 177, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Contour par Hystérésis"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,71,7,32,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,71,24,32,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,71,41,32,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,71,60,32,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,120,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,28,50,14
+    LTEXT           "Seuil Haut",IDC_STATIC,33,10,34,8,0,WS_EX_RIGHT
+    LTEXT           "Seuil Bas",IDC_STATIC,37,26,30,8,0,WS_EX_RIGHT
+    LTEXT           "long. max. contour",IDC_STATIC,7,45,59,8,0,WS_EX_RIGHT
+    LTEXT           "Seuil de longueur",IDC_STATIC,11,62,56,8,0,WS_EX_RIGHT
+    CONTROL         "inférieur",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,63,41,10
+END
+
+IDD_PROJET_APPR DIALOG  0, 0, 400, 207
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration de l'apprentissage"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "*.prj",IDC_NOMPROJET,89,28,98,19
+    PUSHBUTTON      "*.bmp",IDC_NOMIMAGEAPPR,89,65,98,19
+    PUSHBUTTON      "*.appr",IDC_NOMFICHIERAPPR,89,143,98,19
+    PUSHBUTTON      "*.param",IDC_NOMFICHIERPARAM,89,103,98,19
+    DEFPUSHBUTTON   "Sauvegarder",IDOK,7,186,71,14
+    PUSHBUTTON      "Annuler",IDCANCEL,104,186,71,14
+    LTEXT           "Fichier projet",IDC_STATIC,13,31,50,15
+    LTEXT           "Image des zones d'apprentissage",IDC_STATIC,13,65,74,19
+    LTEXT           "Fichier d'apprentissage à générer",IDC_STATIC,13,146,74,17
+    LTEXT           "Fichier de paramètres",IDC_STATIC,13,105,71,15
+    GROUPBOX        "",IDC_STATIC,7,20,188,31
+    GROUPBOX        "",IDC_STATIC,7,57,188,30
+    GROUPBOX        "",IDC_STATIC,7,135,188,31
+    GROUPBOX        "",IDC_STATIC,7,95,188,31
+    LTEXT           "Aperçu:",IDC_STATIC,283,7,28,11
+END
+
+IDD_CONFIGPOLY DIALOGEX 0, 0, 250, 269
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration du fichier de mesure multi-classes"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "*.cmc",IDC_NOMMMC,125,15,102,23
+    PUSHBUTTON      "Ajouter une Classe >>",IDC_AJOUTERCLAS,13,52,79,19
+    PUSHBUTTON      "Ajouter un fichier >>",IDC_AJOUTERFICH,14,76,79,19
+    PUSHBUTTON      "Enlever la sélection",IDC_SUPPRIMCLAS,14,121,79,19
+    DEFPUSHBUTTON   "Sauvegarder",IDOK,52,244,62,18
+    PUSHBUTTON      "Annuler",IDCANCEL,137,244,62,18
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,105,49,138,186,WS_EX_TRANSPARENT | WS_EX_CLIENTEDGE
+    CTEXT           "Fichier de configuration multi-classes",IDC_STATIC,22,17,77,20
+    GROUPBOX        "",IDC_STATIC,7,44,90,56
+    GROUPBOX        "",IDC_STATIC,7,7,236,36
+END
+
+IDD_NBPOINTAPPR DIALOG  0, 0, 129, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Nb de points d'apprentissage"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,26,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,72,26,50,14
+    EDITTEXT        IDC_EDIT1,67,7,41,16,ES_AUTOHSCROLL
+    LTEXT           "Nombre de points ",IDC_STATIC,7,7,57,16
+END
+
+IDD_PMC DIALOG  0, 0, 189, 138
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Générer un fichier polytopes multi-classes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "*.mmc",IDC_BUTTON1,94,15,84,23
+    PUSHBUTTON      "*.pmc",IDC_BUTTON2,95,53,84,23
+    EDITTEXT        IDC_EDIT2,102,92,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,131,92,13,12
+    DEFPUSHBUTTON   "Générer",IDOK,24,117,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,117,50,14
+    CTEXT           "Fichier de mesures multi-classes",IDC_STATIC,23,18,59,19
+    CTEXT           "Fichier polytopes multi-classes à générer",IDC_STATIC,15,53,72,17
+    CTEXT           "Coefficient de séparation des polytopes",IDC_STATIC,14,89,85,21
+    GROUPBOX        "",IDC_STATIC,7,7,175,36
+    GROUPBOX        "",IDC_STATIC,7,42,175,71
+END
+
+IDD_CONFIDEC DIALOG  0, 0, 193, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration de la classification"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,125,74,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,125,75,14
+    PUSHBUTTON      "*.pmc",IDC_BUTTON1,90,15,92,24
+    CTEXT           "Fichier de paramètres",IDC_STATIC,15,59,72,9
+    CONTROL         "Affecter les pixels non-classés",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,39,88,109,9
+    EDITTEXT        IDC_EDIT1,37,100,24,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,61,100,11,13
+    PUSHBUTTON      "*.param",IDC_BUTTON2,90,54,92,24
+    CTEXT           "Fichier polytopes multi-classes",IDC_STATIC,17,17,54,19
+    GROUPBOX        "",IDC_STATIC,7,7,179,38
+    GROUPBOX        "",IDC_STATIC,7,46,179,38
+    LTEXT           "Classe d'affectation",IDC_STATIC,77,103,66,9
+END
+
+IDD_LEGENDE DIALOG  300, 300, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Légende"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_DIALMORPHO DIALOG  0, 0, 128, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Morphologie Mathématique"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,67,45,50,14
+    EDITTEXT        IDC_TAILLE,84,13,31,17,ES_AUTOHSCROLL
+    LTEXT           "Taille de l'élément structurant",IDC_STATIC,13,13,65,21
+END
+
+IDD_DIALRELIEF DIALOG  0, 0, 132, 106
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pseudo Relief"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,85,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,75,85,50,14
+    EDITTEXT        IDC_X0,80,15,24,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_TETA,80,30,24,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_FOCALE,80,45,24,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_DISTANCE,80,60,24,12,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "x0",IDC_STATIC,56,15,10,11
+    LTEXT           "Théta",IDC_STATIC,46,31,21,11
+    LTEXT           "Focale",IDC_STATIC,44,46,22,11
+    LTEXT           "Distance",IDC_STATIC,38,61,28,11
+END
+
+IDD_CHOIXCLASS DIALOG  0, 0, 182, 87
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choix de deux classes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,46,15,26,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY,71,15,11,13
+    EDITTEXT        IDC_EDIT2,126,15,26,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,149,15,11,12
+    EDITTEXT        IDC_EDIT3,46,39,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,126,39,32,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,25,66,32,14
+    PUSHBUTTON      "Cancel",IDCANCEL,96,66,32,14
+    LTEXT           "Classe n°",IDC_STATIC,16,16,30,10
+    LTEXT           "Classe n°",IDC_STATIC,93,16,30,10
+    LTEXT           "Prob     a priori",IDC_STATIC,16,38,28,16
+    LTEXT           "Prob     a priori",IDC_STATIC,94,38,28,16
+    GROUPBOX        "",IDC_STATIC,7,7,82,55
+    GROUPBOX        "",IDC_STATIC,88,7,82,55
+END
+
+IDD_DIALOG_CURVI DIALOG  0, 0, 345, 215
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Curvilinear regions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,288,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,288,24,50,14
+    LTEXT           "Threshold for extrema",IDC_STATIC,23,17,69,11
+    LTEXT           "Max Length",IDC_STATIC,23,37,69,11
+    LTEXT           "Max Width (%)",IDC_STATIC,23,79,69,11
+    LTEXT           "Max dw/dt (pixels)",IDC_STATIC,23,100,69,11
+    EDITTEXT        IDC_EDIT_TE,121,15,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ML,121,37,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DW,121,99,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MW,121,79,45,12,ES_AUTOHSCROLL
+    CONTROL         "Check1",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,185,101,11,9
+    LTEXT           "Static",IDC_TXTMAXW,181,80,84,8
+    LTEXT           "Min Length",IDC_STATIC,23,57,69,11
+    EDITTEXT        IDC_EDIT_ML2,121,57,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_REG,121,120,45,12,ES_AUTOHSCROLL
+    LTEXT           "Regression coef.",IDC_STATIC,24,121,69,11
+    CONTROL         "Check1",IDC_CHECK_REG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,184,121,11,9
+    LTEXT           "Local filtering",IDC_TXTMAXW2,200,122,47,8
+END
+
+IDD_DIALOG_COUPECURVI DIALOG  0, 0, 124, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Taille coupe"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,67,24,50,14
+    EDITTEXT        IDC_EDIT_TAILLECOUPE,19,16,40,14,ES_AUTOHSCROLL
+END
+
+IDD_BoiteParamCurviDetect DIALOGEX 0, 0, 376, 260
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,319,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,319,24,50,14
+    GROUPBOX        "Width for section detection",IDC_STATIC_LARGEUR,7,7,113,52
+    CONTROL         "",IDC_SLIDERLARGEUR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,14,41,100,15
+    CTEXT           "0",IDC_VALLARGEUR,33,23,62,13
+    GROUPBOX        "Width of FFT",IDC_STATIC_LARGEURFOURIER,7,70,113,52
+    CONTROL         "",IDC_SLIDERLARGEURFOURIER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,14,105,100,15
+    CTEXT           "0",IDC_VALLARGEURFOURIER,33,86,62,13
+    GROUPBOX        "Minimum size of region",IDC_STATIC_NBLISTE,7,137,113,52
+    CONTROL         "",IDC_SLIDERNBLIST,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,14,172,100,15
+    CTEXT           "0",IDC_VALLARGEURNBLIST,33,153,62,13
+    GROUPBOX        "Response value of 1D detector",IDC_STATIC_SeuilReponse,7,201,113,52
+    CONTROL         "",IDC_SLIDERSEUILREPONSE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,14,236,100,15
+    CTEXT           "0",IDC_VALSEUILREPONSE,33,217,62,13
+    GROUPBOX        "Minimum width  of region",IDC_STATIC_LARGEURMINI,135,7,113,52
+    CONTROL         "",IDC_SLIDERLARGEURMINI,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,142,41,100,15
+    CTEXT           "0",IDC_VALLARGEURMINI,165,22,62,13
+    GROUPBOX        "Local width variation",IDC_STATIC_LARGEURMINI2,136,73,113,52
+    CONTROL         "",IDC_SLIDERVARIATIONLOCALELARGEUR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,143,108,100,15
+    CTEXT           "0",IDC_VARIATIONLOCALELARGEUR,166,89,62,13
+    CONTROL         "View edges",IDC_CHECKDEBUGCONTOURS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,162,52,10
+    CONTROL         "Show Tracking Results",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,178,87,10
+    CONTROL         "Show Curvilinear Regions",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,195,97,10
+    GROUPBOX        "Debuging Tools",IDC_STATIC,137,141,112,112
+END
+
+IDD_DIALOG_PARAMAFFINE DIALOGEX 0, 0, 306, 226
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Paramètres de la matrice de transformation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,249,7,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,249,24,50,14
+    EDITTEXT        IDC_EDITM1,19,22,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m1",IDC_STATICM1,7,7,62,43
+    EDITTEXT        IDC_EDITM2,85,23,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m2",IDC_STATICM2,76,7,62,43
+    EDITTEXT        IDC_EDITM3,157,23,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m3",IDC_STATICM3,145,7,62,43
+    EDITTEXT        IDC_EDITM4,19,73,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m4",IDC_STATICM4,7,58,62,43
+    EDITTEXT        IDC_EDITM5,88,73,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m5",IDC_STATICM5,75,58,62,43
+    EDITTEXT        IDC_EDITM6,159,72,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m6",IDC_STATICM6,147,59,62,43
+    EDITTEXT        IDC_EDITM7,158,129,38,17,ES_AUTOHSCROLL
+    GROUPBOX        "m7",IDC_STATICM7,145,114,62,43
+END
+
+IDD_DIALOG_PROGRESSCURVI DIALOGEX 0, 0, 321, 196
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Curvilinear region detection information"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PROGRESSCURVI,"msctls_progress32",WS_BORDER,7,179,307,10
+    LTEXT           "",IDC_STATIC_Petrou,37,22,28,16
+    GROUPBOX        "Petrou-Kittler time ",IDC_STATIC,7,7,95,40
+    LTEXT           "",IDC_STATIC_Tracking,142,73,28,16
+    GROUPBOX        "Display time ",IDC_STATIC,112,57,95,40
+    LTEXT           "",IDC_STATIC_1DProcess,143,22,28,16
+    GROUPBOX        "Tracking time ",IDC_STATIC,113,7,95,40
+    LTEXT           "",IDC_STATIC_2DProcess,37,73,28,16
+    GROUPBOX        "2D contrainsts time ",IDC_STATIC,7,57,95,40
+    LTEXT           "",IDC_STATIC_Display,249,22,28,16
+    GROUPBOX        "1D detector time ",IDC_STATIC,219,7,95,40
+    LTEXT           "0 %",IDC_STATIC_POURCENTAGE,142,111,23,16
+    LTEXT           "Static",IDC_NBREG,7,134,81,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_INFO_TRAITEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_FACTEUR_ZOOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 118
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_DIALSEQ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_DIALPARZ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    CG_IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_SetT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 133
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_Hysteresis, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_PROJET_APPR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 393
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_CONFIGPOLY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+
+    IDD_NBPOINTAPPR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 122
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_PMC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_CONFIDEC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_LEGENDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALMORPHO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_DIALRELIEF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_CHOIXCLASS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_DIALOG_CURVI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_DIALOG_COUPECURVI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 117
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_BoiteParamCurviDetect, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 253
+    END
+
+    IDD_DIALOG_PARAMAFFINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DIALOG_PROGRESSCURVI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""message.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir Image",                ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE2
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE3
+        MENUITEM "Reccent File",                ID_FILE_MRU_FILE4
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Acquérir"
+    BEGIN
+        MENUITEM "&Snap",                       ID_SNAP
+        MENUITEM "&Grab",                       ID_GRAB
+    END
+    POPUP "Parzen 3D"
+    BEGIN
+        MENUITEM "Calcul des espaces de proba....", ID_PARZEN3D_CALCULDESESPACESDEPROBA
+        MENUITEM "Mesrure recouvrements avec CL 0", ID_PARZEN3D_MESRURERECOUVREMENTSAVECCL0
+        MENUITEM SEPARATOR
+        MENUITEM "Créer un espace de décision", ID_PARZEN3D_CRERUNESPACEDEDCISION
+        MENUITEM "Ouvrir un espace de décision", ID_PARZEN3D_OUVRIRUNESPACEDEDCISION
+        MENUITEM "Mesure de volume des classes", ID_PARZEN3D_MESUREDEVOLUMEDESCLASSES
+        MENUITEM "Sauvegarder un espace de décision", ID_PARZEN3D_SAUVEGARDERUNESPACEDEDCISION
+        MENUITEM SEPARATOR
+        MENUITEM "Visualiser l'espace de décision", ID_PARZEN3D_VISUALISERLESPACEDEDCISION
+    END
+    POPUP "Zernike"
+    BEGIN
+        MENUITEM "Batch Moments",               ID_ZERNIKE_BATCHMOMENTS
+    END
+    POPUP "Test"
+    BEGIN
+        MENUITEM "Ouvrir",                      ID_TEST_OUVRIR
+    END
+    POPUP "Etude curvi 1D "
+    BEGIN
+        POPUP "Generation Fichier Profil"
+        BEGIN
+            MENUITEM "Porte (48)",                  ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_PORTE
+            MENUITEM "Porte (32)",                  ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_PORTE32
+            MENUITEM "Porte (16)",                  ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_PORTE16
+            MENUITEM "Porte (12)",                  ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_PORTE12
+            MENUITEM "Bi-Texture (48)",             ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_BITEXTURE48
+            MENUITEM "Porte Bord Non Sim (48)",     ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_PORTEBORDNONSIM48
+            MENUITEM "Multi-Signaux 1D",            ID_ETUDECURVI1D_GENERATIONFICHIERPROFIL_MULTISIGNAUX1D
+            POPUP "Outils"
+            BEGIN
+                POPUP "Conversion"
+                BEGIN
+                    MENUITEM "Signal (*.bin) ---> Coupe (*.xlc)", ID_CONVERSION_SIGNAL
+                    MENUITEM " Coupe (*.xlc) ---> Signal (*.bin)", ID_CONVERSION_COUPE
+                END
+                MENUITEM "Ajout Bruit",                 ID_OUTILS_AJOUTBRUIT
+            END
+        END
+        POPUP "Etude avec Objet"
+        BEGIN
+            MENUITEM "Etude Porte (48)",            ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTE
+            MENUITEM "Etude Porte (32)",            ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTE32
+            MENUITEM "Etude Porte (16)",            ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTE16
+            MENUITEM "Etude Porte(12)",             ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTE12
+            MENUITEM "EtudePorte (12) + F-4",       ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTE12F4
+            MENUITEM "Etude Bi-Texture (48) F16",   ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEBITEXTURE48
+            MENUITEM "Etude Bi-Texture (48) F4",    ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEBITEXTURE48F4
+            MENUITEM "Etude Porte Non Sim (48) F16", ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEPORTENONSIM48F16
+            MENUITEM "Etude Signaux Multiple (48) F16", ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDESIGNAUXMULTIPLE48F16
+            MENUITEM "Etude Signaux réels",         ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDESIGNAUXRELS
+            MENUITEM "Test New",                    ID_ETUDECURVI1D_ETUDEAVECOBJET_TESTNEW
+            MENUITEM "Etude Multifichier",          ID_ETUDECURVI1D_ETUDEAVECOBJET_ETUDEMULTIFICHIER
+        END
+        POPUP "Steger"
+        BEGIN
+            MENUITEM "Convolution1D",               ID_STEGER_CONVOLUTION1D
+        END
+    END
+END
+
+IDR_HISTO MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver la &coupe",            ID_COUPE_SAUVER
+        MENUITEM "&Fermer la coupe",            ID_COUPE_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Curseur",                    ID_COUPE_OPTIONS_CURSEUR
+        MENUITEM "Zoom...",                     ID_OPTIONS_ZOOM
+        MENUITEM SEPARATOR
+        POPUP "&Outils"
+        BEGIN
+            MENUITEM "Lissage [1&11]",              ID_COUPE_OPTIONS_LISSAGE1
+            MENUITEM "Lissage [1&21]",              ID_COUPE_OPTIONS_LISSAGE2
+            MENUITEM SEPARATOR
+            MENUITEM "&Information",                ID_INFORMATION
+        END
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+END
+
+IDR_COUPE MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver la &coupe",            ID_COUPE_SAUVER
+        MENUITEM "&Fermer la coupe",            ID_COUPE_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Copy",                        ID_EDIT_COPY
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Curseur",                    ID_COUPE_OPTIONS_CURSEUR
+        MENUITEM "Zoom...",                     ID_OPTIONS_ZOOM
+        MENUITEM "Min et Max automatique",      ID_MIN_MAX_AUTO
+        MENUITEM SEPARATOR
+        POPUP "&Outils"
+        BEGIN
+            MENUITEM "Lissage [1&11]",              ID_COUPE_OPTIONS_LISSAGE1
+            MENUITEM "Lissage [1&21]",              ID_COUPE_OPTIONS_LISSAGE2
+            MENUITEM SEPARATOR
+            MENUITEM "&Information",                ID_INFORMATION
+        END
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+END
+
+IDR_ACQIMAGENB MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver",                      ID_SAUVER
+        MENUITEM "&Sauvegarder sous...\tCtrl+S", ID_SAUVER_SOUS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE2
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE3
+        MENUITEM "Reccent File",                ID_FILE_MRU_FILE4
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Couper \tCtrl+X",             ID_EDIT_CUT
+        MENUITEM "Copier\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "&Restaurer l'image",          169
+        MENUITEM SEPARATOR
+        POPUP "&Sélection d'une zone"
+        BEGIN
+            MENUITEM "Avec la &Souris",             ID_ZONE
+            MENUITEM "Avec le &Clavier",            ID_ZONE_MANUELLE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "ToolBar",                     ID_EDIT_TOOLBAR
+    END
+    POPUP "&Acquérir"
+    BEGIN
+        MENUITEM "&Snap",                       ID_SNAP
+        MENUITEM "&Grab",                       ID_GRAB
+        MENUITEM "&Freeze",                     ID_FREEZE
+        MENUITEM SEPARATOR
+        POPUP "&Séquence"
+        BEGIN
+            MENUITEM "&1- Créer une séquence",      ID_CREER_SEQUENCE
+            MENUITEM "&2- Acquérir la séquence",    ID_ACQUI_SEQUENCE
+            MENUITEM "&3- Lire la sequence",        ID_LIRE_SEQUENCE
+            MENUITEM "&4- Sauver la séquence",      ID_SAUVE_SEQUENCE
+            MENUITEM "&5- Détruire la séquence",    ID_DETRUIRE_SEQUENCE
+            MENUITEM SEPARATOR
+            MENUITEM "&Aquisition séquence +calcul", ID_ACQURIR_SQUENCE_3AQUISITIONSQUENCECALCUL
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Réglages",                    ID_ACQURIR_RGLAGES
+    END
+    POPUP "&Traitement"
+    BEGIN
+        POPUP "Opérateurs Unaires"
+        BEGIN
+            MENUITEM "&Inversion",                  ID_INVERSION_VIDEO
+            MENUITEM SEPARATOR
+            MENUITEM "&Seuillage (&1)",             ID_SEUILLAGE1
+            MENUITEM "Seuillage (&2)",              ID_SEUILLAGE2
+            MENUITEM SEPARATOR
+            MENUITEM "&Normalisation",              ID_NORMALISATION
+            MENUITEM "Mise à Zéro",                 ID_MISE_A_ZERO
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Etiquettage",                ID_ETIQUETTAGE
+        MENUITEM SEPARATOR
+        POPUP "Filtres"
+        BEGIN
+            MENUITEM "Masque de SOBEL",             ID_SOBEL
+            MENUITEM "Gradient de ROBERTS",         ID_GRAD_ROBERTS
+            MENUITEM "Opérateur de PREWITT",        ID_OP_PREWITT
+            POPUP "Laplaciens "
+            BEGIN
+                MENUITEM "Laplacien 1",                 ID_LAPLACIEN1
+                MENUITEM "Laplacien 2",                 ID_LAPLACIEN_2
+            END
+        END
+        POPUP "Reducteur de Bruit"
+        BEGIN
+            MENUITEM "Moyenneur XY111",             ID__MOYENNEURXY111
+            MENUITEM "Moyenneur X111",              ID_MOYENNEURX111
+            MENUITEM "Moyenneur Y111",              ID_MOYENNEURY111
+            MENUITEM "Moyenneur XY121",             ID_MOYENNEURXY121
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Luminance moy fix 10*10 + seuil", ID_TRAITEMENT_LUMINANCEMOYENNESEUIL
+        MENUITEM "luminance moyenne fen glis 12*12", ID_TRAITEMENT_LUMINANCEMOYENNE
+        MENUITEM "Gradient de Roberts",         ID_TRAITEMENT_GRADIENTDEROB
+        MENUITEM "Sobel",                       ID_TRAITEMENT_SOBEL
+        POPUP "Filtres SetT"
+        BEGIN
+            MENUITEM "Filtre S et T normalisé",     ID_TRAITEMENT_FILTRESETT
+            MENUITEM "Filtre S et T non normalisé", ID_TRAITEMENT_FILTRESSETT_FILTRESETTNONNORMALIS
+            MENUITEM "Haut bas",                    ID_TRAITEMENT_FILTRESSETT_HAUTBAS
+        END
+        MENUITEM "Correlation",                 ID_TRAITEMENT_CORRELATION
+        MENUITEM "DST",                         ID_DST
+        POPUP "Contours"
+        BEGIN
+            MENUITEM "contour hystérésis 1",        ID_CONTOURS_CONTOURHYSTRSIS1
+            MENUITEM "contour hystérésis 2",        ID_CONTOURS_CONTOURHYSTRSIS2
+            MENUITEM "contour hystérésis fen 8*8",  ID_CONTOURS_CONTOURHYSTRSISFEN88
+        END
+        MENUITEM SEPARATOR
+        POPUP "Modification d'histogramme"
+        BEGIN
+            MENUITEM "&Réduction sur 16 niveaux",   ID_TRAITEMENT_REDUCTIONSUR16NIVEAUX
+            MENUITEM "Egalisation d'histogramme",   ID_TRAITEMENT_MODIFICATIONDHISTOGRAMME_EGALISATIONDHISTOGRAMME
+            MENUITEM "Expansion dynamique",         ID_TRAITEMENT_MODIFICATIONDHISTOGRAMME_EXPANSIONDYNAMIQUE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM ">255",                        ID_EDITION_255
+        MENUITEM "Max 12*12",                   ID_TRAITEMENT_MAXMIN
+        MENUITEM "5 paramètres",                ID_MASQUE_5PARAMTRES
+        MENUITEM "essai tot",                   ID_TRAITEMENT_5PARAMTRESETESSAIS_ESSAITOT
+        MENUITEM SEPARATOR
+        MENUITEM "recalage",                    ID_TRAITEMENT_RECALAGE
+        MENUITEM SEPARATOR
+        MENUITEM "Centre ",                     ID_TRAITEMENT_CENTRE
+        MENUITEM "Ajustement",                  ID_TRAITEMENT_AJUSTEMENT
+        MENUITEM "Petrou",                      ID_TRAITEMENT_PETROU
+    END
+    POPUP "Analyse"
+    BEGIN
+        MENUITEM "&FFT",                        ID_FFT
+        POPUP "Analyse multirésolutions"
+        BEGIN
+            MENUITEM "Ondelette de HAAR",           ID_HAAR
+            MENUITEM "Ondelette B-Splines Cubiques", ID_BSPLINE
+            MENUITEM SEPARATOR
+            MENUITEM "Reconstruction",              ID_RECONSTRUCT
+            MENUITEM "Extraction des détails",      ID_CONT
+            MENUITEM "Extraction des Vij",          ID_BASSE
+            MENUITEM "Extraction multi-échelles (HF)", ID_MULTI_ECHELLE
+            MENUITEM "Extrapolation ",              ID_EXTRA_PAUL
+            MENUITEM SEPARATOR
+            MENUITEM "Affecter l'échelle",          ID_AFFECTER_ECHELLE
+        END
+    END
+    POPUP "Transformation"
+    BEGIN
+        POPUP "Effets &Miroir"
+        BEGIN
+            MENUITEM "Vertical",                    ID_MIROIR_VERT
+            MENUITEM "Horizontal",                  ID_MIROIR_HORI
+        END
+        POPUP "Rotations"
+        BEGIN
+            MENUITEM "90° Gauche",                  ID_ROTATIONS_GAUCHE
+            MENUITEM "90° Droite",                  ID_ROTATIONS_DROITE
+        END
+        POPUP "Echantillonnage"
+        BEGIN
+            MENUITEM "Sous échantillonnage lignes", ID_SOUS_ECHAN_LIGNE
+            MENUITEM "Sous échantillonnage Colonnes", ID_SOUS_ECHAN_COL
+            MENUITEM "Sous échantillonnage lignes et colonnes", ID_ECHANT_LIGNE_COL
+        END
+    END
+    POPUP "&Outils"
+    BEGIN
+        POPUP "Créer une copie"
+        BEGIN
+            MENUITEM "En float",                    ID_COPIE_EN_FLOAT
+            MENUITEM "En Byte",                     ID_COPIE_EN_BYTE
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Coupe"
+        BEGIN
+            MENUITEM "&Horizontale",                ID_HORIZONTALE
+            MENUITEM "&Verticale",                  ID_VERTICALE
+            MENUITEM "&Oblique",                    ID_OBLIQUE
+        END
+        POPUP "&Information"
+        BEGIN
+            MENUITEM "&Histogramme",                ID_HISTOGRAMME
+            MENUITEM "&Fonction de répartition",    ID_FONCTION_REPARTITION
+            MENUITEM SEPARATOR
+            MENUITEM "&Information générale",       ID_INFO_GENERALE
+            MENUITEM "Info sur Traitement effectué", ID_INFO_IMAGE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Palette"
+        BEGIN
+            MENUITEM "&Noir et Blanc",              ID_NB
+            MENUITEM "Fausses &Couleurs",           ID_COULEUR
+            MENUITEM SEPARATOR
+            MENUITEM "&Palette",                    ID_AFFICHE_PALETTE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Zoom bitmap"
+        BEGIN
+            MENUITEM "25%",                         ID_ZOOM_25
+            MENUITEM "50%",                         ID_ZOOM_50
+            MENUITEM "100%",                        ID_ZOOM_100
+            MENUITEM SEPARATOR
+            MENUITEM "X %",                         ID_ZOOM_X
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Vue 3 D",                    ID_OUTILS_VUE3D
+    END
+    POPUP "Parzen 3D"
+    BEGIN
+        MENUITEM "Calcul des espaces de proba....", ID_PARZEN3D_CALCULDESESPACESDEPROBA
+        MENUITEM "Mesrure recouvrements avec CL 0", ID_PARZEN3D_MESRURERECOUVREMENTSAVECCL0
+        MENUITEM SEPARATOR
+        MENUITEM "Créer un espace de décision", ID_PARZEN3D_CRERUNESPACEDEDCISION
+        MENUITEM "Ouvrir un espace de décision", ID_PARZEN3D_OUVRIRUNESPACEDEDCISION
+        MENUITEM "Mesure de volume des classes", ID_PARZEN3D_MESUREDEVOLUMEDESCLASSES
+        MENUITEM "Sauvegarder un espace de décision", ID_PARZEN3D_SAUVEGARDERUNESPACEDEDCISION
+        MENUITEM SEPARATOR
+        MENUITEM "Visualiser l'espace de décision", ID_PARZEN3D_VISUALISERLESPACEDEDCISION
+    END
+    POPUP "&Décision"
+    BEGIN
+        MENUITEM "&Configuration de la décision", ID_DCISION_CONFIGURATIONDELADCISION
+        MENUITEM SEPARATOR
+        MENUITEM "&Décision sans masque",       ID_DCISION_DCISION
+        MENUITEM "Décision avec masque",        ID_DCISION_DCISIONAVECMASQUE
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 2 masques",          ID_DCISION_DCISION2MASQUES
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques fixes",    ID_DCISION_DCISION3MASQUES
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques adapt.",   ID_DCISION_DCISION3MASQUESADAPT
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques sans rech", ID_DCISION_DCISION3MASQUESSANSRECH
+        MENUITEM SEPARATOR
+        MENUITEM "Decision 3 masques  adapt.enregist. centre", ID_DCISION_DECISION3MASQUESENREGIST
+        MENUITEM "decision sur float",          ID_DCISION_DECISIONSURFLOAT
+    END
+    POPUP "&Apprentissage"
+    BEGIN
+        MENUITEM "&Projet...",                  ID_APPRENTISSAGE_GNRERUNPROJET
+        POPUP "Paramètres..."
+        BEGIN
+            MENUITEM "Définir les paramètres",      ID_APPRENTISSAGE_DFINIRLESPARAMTRES
+            MENUITEM "Visualisation Paramètres",    ID_PARAMTRAGE_VISUALISATIONPARAMTRES
+        END
+        MENUITEM "&Générer le fichier d'apprentissage", ID_APPRENTISSAGE_GNRERLEFICHIERDAPPRENTISSAGE
+        MENUITEM SEPARATOR
+        MENUITEM "Construire un fichier de mesures multi-classes", ID_APPRENTISSAGE_CONSTRUIRELEFICHIERMULTICLASSES
+        MENUITEM "Visualisation des mesures",   ID_PARAMTRAGE_VISUALISATIONMESOUPOL
+        MENUITEM SEPARATOR
+        MENUITEM "Générer un Fichier polytopes multi-classes", ID_APPRENTISSAGE_GNRERUNFICHIERPOLYTOPESMULTICLASSES
+    END
+    POPUP "&Masque"
+    BEGIN
+        MENUITEM "Rechercher seuil",            ID_MASQUE_RECHERCHER
+        MENUITEM "Rechercher à la main",        ID_MASQUE_LAMAIN
+        MENUITEM SEPARATOR
+        MENUITEM "Annuler Masque",              ID_MASQUE_ANNULER
+        MENUITEM "Supprimer Masque",            ID_TRAITEMENT_SUPPRIMER
+        MENUITEM SEPARATOR
+        POPUP "Calculs globaux"
+        BEGIN
+            MENUITEM "Contraste ",                  ID_MASQUE_CONTRASTE
+            MENUITEM "Max-min",                     ID_MASQUE_MAXMIN
+            MENUITEM "Entropie",                    ID_MASQUE_ENTROPIE
+            MENUITEM "Luminance moyenne",           ID_MASQUE_LUMINANCEMOYENNE
+            MENUITEM "Gradient moyen",              ID_MASQUE_GRADIENTMOYEN
+            MENUITEM "Dimensions",                  ID_MASQUE_DIMENSIONS
+            MENUITEM SEPARATOR
+            MENUITEM "Tous...",                     ID_MASQUE_TOUS
+        END
+        POPUP "Calculs locaux"
+        BEGIN
+            MENUITEM "Contraste",                   ID_MASQUE_CALCULSLOCAUX_CONTRASTE
+            MENUITEM "Max-min",                     ID_MASQUE_CALCULSLOCAUX_MAXMIN
+            MENUITEM "Entropie",                    ID_MASQUE_CALCULSLOCAUX_ENTROPIE
+            MENUITEM "Luminance moyenne",           ID_MASQUE_CALCULSLOCAUX_LUMINANCEMOYENNE
+            MENUITEM "Gradient moyen",              ID_MASQUE_CALCULSLOCAUX_GRADIENTMOYEN
+            MENUITEM SEPARATOR
+            MENUITEM "Tous",                        ID_MASQUE_CALCULSLOCAUX_TOUS
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Nombre de pixels",            ID_MASQUE_NBPIXELS
+        MENUITEM "Histogramme",                 ID_MASQUE_HISTOGRAMME
+        MENUITEM SEPARATOR
+        POPUP "Badigeon segmentation"
+        BEGIN
+            MENUITEM "essai",                       ID_MASQUE_ESSAI
+            MENUITEM "essai2",                      ID_MASQUE_ESSAI2
+            MENUITEM "essai3",                      ID_MASQUE_ESSAI3
+            MENUITEM "essai4",                      ID_MASQUE_ESSAI4
+            MENUITEM "essai5",                      ID_MASQUE_ESSAI5
+            MENUITEM "essai6",                      ID_MASQUE_ESSAI6
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "chiffres de texture...",      ID_CALCUL_TEXTURE
+        MENUITEM SEPARATOR
+        MENUITEM "Découpage",                   ID_MASQUE_DCOUPAGE
+        MENUITEM "Caract. éclair.",             ID_CARACTECLAIR
+        MENUITEM SEPARATOR
+        MENUITEM "Caractérisation global",      ID_MASQUE_CARACTRISATIONGLOBAL
+        MENUITEM SEPARATOR
+        MENUITEM "Caractérisation Masque fixe", ID_MASQUE_MASQUEFIXE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+    MENUITEM "calcul ellipse",              ID_CALCULELLIPSE
+END
+
+IDR_COLOR MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver",                      ID_SAUVER
+        MENUITEM "&Sauvegarder sous...\tCtrl+S", ID_SAUVER_SOUS
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Restaurer l'image",          169
+        MENUITEM SEPARATOR
+        POPUP "&Sélection d'une zone"
+        BEGIN
+            MENUITEM "Avec la &Souris",             ID_ZONE
+            MENUITEM "Avec le &Clavier",            ID_ZONE_MANUELLE
+        END
+    END
+    POPUP "&Traitement"
+    BEGIN
+        POPUP "Séparation des couleurs"
+        BEGIN
+            MENUITEM "R G B",                       ID_COLOR
+            MENUITEM "Luminance Y Chrominance R-Y et B-Y ", ID_CHROMINANCE
+        END
+        MENUITEM "Normalisation des composantes", ID_TRAITEMENT_NORMALISATIONDESCOMPOSANTES
+        MENUITEM "Curvilinear detection",       ID_COLOR_CURVI
+        MENUITEM "Gradient Y",                  ID_GRAD_Y
+        MENUITEM "Estimation Temps FFT",        ID_TRAITEMENT_ESTIMATIONTEMPSFFT
+        POPUP "HyperGradient"
+        BEGIN
+            MENUITEM "Par Bloc",                    ID_TRAITEMENT_HYPERGRADIENT_PARBLOC
+            MENUITEM "Fenetre glissante",           ID_TRAITEMENT_HYPERGRADIENT_FENETREGLISSANTE
+            MENUITEM "Fenetre glissante (Zero Padding)", ID_TRAITEMENT_HYPERGRADIENT_FENETREGLISSANTEZEROPADDING
+        END
+        POPUP "Outils"
+        BEGIN
+            MENUITEM "Etude Distance Maxi",         ID_TRAITEMENT_OUTILS_ETUDEDISTANCEMAXI
+        END
+        MENUITEM "Petrou Couleur",              ID_TRAITEMENT_PETROUCOULEUR
+        MENUITEM "Gaussien couleur",            ID_TRAITEMENT_GAUSSIENCOULEUR
+        MENUITEM "Curvi couleur",               ID_TRAITEMENT_CURVICOULEUR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+END
+
+IDR_IMAGE MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir Image",                ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Imprimer",                    ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver",                      ID_SAUVER
+        MENUITEM "&Sauvegarder sous...\tCtrl+S", ID_SAUVER_SOUS
+        MENUITEM "Sauvegarde Excel",            ID_SAUVE_EXCEL
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE2
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE3
+        MENUITEM "Reccent File",                ID_FILE_MRU_FILE4
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Couper \tCtrl+X",             ID_EDIT_CUT
+        MENUITEM "Copier\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "&Restaurer l'image",          169
+        MENUITEM SEPARATOR
+        POPUP "&Sélection d'une zone"
+        BEGIN
+            MENUITEM "Avec la &Souris",             ID_ZONE
+            MENUITEM "Avec le &Clavier",            ID_ZONE_MANUELLE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "ToolBar",                     ID_EDIT_TOOLBAR
+    END
+    POPUP "&Traitement"
+    BEGIN
+        POPUP "Opérateurs Unaires"
+        BEGIN
+            MENUITEM "&Inversion",                  ID_INVERSION_VIDEO
+            MENUITEM SEPARATOR
+            MENUITEM "&Seuillage (&1)",             ID_SEUILLAGE1
+            MENUITEM "Seuillage (&2)",              ID_SEUILLAGE2
+            MENUITEM "Seuillage de Wen multi-niveaux", ID_TRAITEMENT_OPRATEURSUNAIRES_SEUILLAGEDEWEN
+            MENUITEM SEPARATOR
+            MENUITEM "&Normalisation",              ID_NORMALISATION
+            MENUITEM "Mise à Zéro",                 ID_MISE_A_ZERO
+        END
+        MENUITEM SEPARATOR
+        POPUP "Morphologie"
+        BEGIN
+            MENUITEM "Erosion",                     ID_TRAITEMENT_MORPHOLOGIE_EROSION
+            MENUITEM "Dilatation",                  ID_TRAITEMENT_MORPHOLOGIE_DILATATION
+            MENUITEM "Ouverture",                   ID_TRAITEMENT_MORPHOLOGIE_OUVERTURE
+            MENUITEM "Fermeture",                   ID_TRAITEMENT_MORPHOLOGIE_FERMETURE
+            MENUITEM "Amincissement ",              ID_TRAITEMENT_MORPHOLOGIE_AMINCISSEMENT
+            MENUITEM "Epaississement",              ID_TRAITEMENT_MORPHOLOGIE_EPAISSISSEMENT
+            MENUITEM "Ebarbulage",                  ID_TRAITEMENT_MORPHOLOGIE_BARBULAGE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Etiquettage",                ID_ETIQUETTAGE
+        MENUITEM SEPARATOR
+        POPUP "Filtres"
+        BEGIN
+            MENUITEM "Masque de SOBEL",             ID_SOBEL
+            MENUITEM "Gradient de ROBERTS",         ID_GRAD_ROBERTS
+            MENUITEM "Opérateur de PREWITT",        ID_OP_PREWITT
+            POPUP "Laplaciens "
+            BEGIN
+                MENUITEM "Laplacien 1",                 ID_LAPLACIEN1
+                MENUITEM "Laplacien 2",                 ID_LAPLACIEN_2
+            END
+        END
+        POPUP "Reducteur de Bruit"
+        BEGIN
+            MENUITEM "Moyenneur XY111",             ID__MOYENNEURXY111
+            MENUITEM "Moyenneur X111",              ID_MOYENNEURX111
+            MENUITEM "Moyenneur Y111",              ID_MOYENNEURY111
+            MENUITEM "Moyenneur XY121",             ID_MOYENNEURXY121
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Luminance moy fix 10*10 + seuil", ID_TRAITEMENT_LUMINANCEMOYENNESEUIL
+        MENUITEM "luminance moyenne fen glis 12*12", ID_TRAITEMENT_LUMINANCEMOYENNE
+        MENUITEM "Gradient de Roberts",         ID_TRAITEMENT_GRADIENTDEROB
+        MENUITEM "Sobel",                       ID_TRAITEMENT_SOBEL
+        POPUP "Filtres SetT"
+        BEGIN
+            MENUITEM "Filtre S et T normalisé",     ID_TRAITEMENT_FILTRESETT
+            MENUITEM "Filtre S et T non normalisé", ID_TRAITEMENT_FILTRESSETT_FILTRESETTNONNORMALIS
+            MENUITEM "Haut bas",                    ID_TRAITEMENT_FILTRESSETT_HAUTBAS
+        END
+        MENUITEM "DST",                         ID_DST
+        POPUP "Correlation"
+        BEGIN
+            MENUITEM "Correlation 1",               ID_TRAITEMENT_CORRELATION
+            MENUITEM "Correlation 2",               ID_TRAITEMENT_CORRELATION_CORRELATION2
+        END
+        POPUP "Contours"
+        BEGIN
+            MENUITEM "contour hystérésis 1",        ID_CONTOURS_CONTOURHYSTRSIS1
+            MENUITEM "contour hystérésis 2",        ID_CONTOURS_CONTOURHYSTRSIS2
+            MENUITEM "contour hystérésis fen 8*8",  ID_CONTOURS_CONTOURHYSTRSISFEN88
+        END
+        MENUITEM SEPARATOR
+        POPUP "Modification d'histogramme"
+        BEGIN
+            MENUITEM "&Réduction sur 16 niveaux",   ID_TRAITEMENT_REDUCTIONSUR16NIVEAUX
+            MENUITEM "Egalisation d'histogramme",   ID_TRAITEMENT_MODIFICATIONDHISTOGRAMME_EGALISATIONDHISTOGRAMME
+            MENUITEM "Expansion dynamique",         ID_TRAITEMENT_MODIFICATIONDHISTOGRAMME_EXPANSIONDYNAMIQUE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM ">255",                        ID_EDITION_255
+        MENUITEM SEPARATOR
+        POPUP "5 paramètres et essais"
+        BEGIN
+            MENUITEM "Max 12*12",                   ID_TRAITEMENT_MAXMIN
+            MENUITEM "Max 12*12 32b",               ID_TRAITEMENT_MAX121232B
+            MENUITEM "5 paramètres",                ID_MASQUE_5PARAMTRES
+            MENUITEM SEPARATOR
+            MENUITEM "test contratse",              ID_TRAITEMENT_TESTCONTRATSE
+            MENUITEM "5 paramètres commun",         ID_TRAITEMENT_5PARAMTRESCOMMUN
+            MENUITEM SEPARATOR
+            MENUITEM "5 paramètres commun + masque", ID_TRAITEMENT_5PARAMTRESETESSAIS_5PARAMTRESCOMMUNMASQUE
+            MENUITEM "essai tot",                   ID_TRAITEMENT_5PARAMTRESETESSAIS_ESSAITOT
+            MENUITEM SEPARATOR
+            MENUITEM "calcul tolérence cathode",    ID_CALCULELLIPSE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Soustraction",                ID_TRAITEMENT_SOUSTRACTION
+        MENUITEM SEPARATOR
+        MENUITEM "recalage",                    ID_TRAITEMENT_RECALAGE
+        MENUITEM SEPARATOR
+        MENUITEM "Centre\tCtrl+P",              ID_TRAITEMENT_CENTRE
+        MENUITEM "dessin mesures",              ID_TRAITEMENT_DESSINMESURES
+        MENUITEM SEPARATOR
+        MENUITEM "Réduction de niveaux",        ID_TRAITEMENT_RDUCTIONDENIVEAUX
+        MENUITEM SEPARATOR
+        MENUITEM "codage extrema",              ID_TRAITEMENT_CODAGEEXTREMA
+        MENUITEM "Densité avec zone",           ID_TRAITEMENT_DENSITDANSZONE
+        MENUITEM "Comparaison im bin",          ID_TRAITEMENT_COMPARAISONIMBIN
+        MENUITEM "Ajustement",                  ID_TRAITEMENT_AJUSTEMENT
+        MENUITEM "Analyse contour",             ID_TRAITEMENT_ANALYSECONTOUR
+        MENUITEM "Equilibrage",                 ID_TRAITEMENT_EQUILIBRAGE
+        MENUITEM "Contour Petrou",              ID_TRAITEMENT_CONTOURPETROU
+        MENUITEM "Curvilinear",                 ID_TRAITEMENT_CURVILINEAR
+        POPUP "Convolution gaussien"
+        BEGIN
+            MENUITEM "gaussien 2D",                 ID_TRAITEMENT_CONVOLUTIONGAUSSIEN
+            MENUITEM "Gaussien 1D X",               ID_TRAITEMENT_CONVOLUTIONGAUSSIEN_GAUSSIEN1DX
+            MENUITEM "Gaussien 1D Y",               ID_TRAITEMENT_CONVOLUTIONGAUSSIEN_GAUSSIEN1DY
+            MENUITEM "Curvilinear detection",       ID_TRAITEMENT_CONVOLUTIONGAUSSIEN_CURVILINEARDETECTION
+        END
+    END
+    POPUP "&Analyse"
+    BEGIN
+        MENUITEM "&FFT",                        ID_FFT
+        POPUP "Analyse multirésolutions"
+        BEGIN
+            MENUITEM "Ondelette de HAAR",           ID_HAAR
+            MENUITEM "Ondelette B-Splines Cubiques", ID_BSPLINE
+            MENUITEM SEPARATOR
+            MENUITEM "Reconstruction",              ID_RECONSTRUCT
+            MENUITEM "Extraction des détails",      ID_CONT
+            MENUITEM "Extraction des Vij",          ID_BASSE
+            MENUITEM "Extraction multi-échelles (HF)", ID_MULTI_ECHELLE
+            MENUITEM "Extrapolation ",              ID_EXTRA_PAUL
+            MENUITEM SEPARATOR
+            MENUITEM "Affecter l'échelle",          ID_AFFECTER_ECHELLE
+        END
+    END
+    POPUP "T&ransformation"
+    BEGIN
+        POPUP "Effets &Miroir"
+        BEGIN
+            MENUITEM "Vertical",                    ID_MIROIR_VERT
+            MENUITEM "Horizontal",                  ID_MIROIR_HORI
+        END
+        POPUP "Rotations"
+        BEGIN
+            MENUITEM "90° Gauche",                  ID_ROTATIONS_GAUCHE
+            MENUITEM "90° Droite",                  ID_ROTATIONS_DROITE
+            MENUITEM "Rotation...",                 ID_TRAITEMENT_ROTATION
+        END
+        POPUP "Echantillonnage"
+        BEGIN
+            MENUITEM "Sous échantillonnage lignes", ID_SOUS_ECHAN_LIGNE
+            MENUITEM "Sous échantillonnage Colonnes", ID_SOUS_ECHAN_COL
+            MENUITEM "Sous échantillonnage lignes et colonnes", ID_ECHANT_LIGNE_COL
+        END
+        MENUITEM "Conversion en BSpline",       ID_TRANSFORMATION_CONVERSIONENBSPLINE
+    END
+    POPUP "&Outils"
+    BEGIN
+        POPUP "Créer une copie"
+        BEGIN
+            MENUITEM "En float",                    ID_COPIE_EN_FLOAT
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Coupe"
+        BEGIN
+            MENUITEM "&Horizontale",                ID_HORIZONTALE
+            MENUITEM "&Verticale",                  ID_VERTICALE
+            MENUITEM "&Oblique",                    ID_OBLIQUE
+        END
+        POPUP "&Information"
+        BEGIN
+            MENUITEM "&Histogramme",                ID_HISTOGRAMME
+            MENUITEM "&Fonction de répartition",    ID_FONCTION_REPARTITION
+            MENUITEM SEPARATOR
+            MENUITEM "&Information générale",       ID_INFO_GENERALE
+            MENUITEM "Info sur Traitement effectué", ID_INFO_IMAGE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Palette"
+        BEGIN
+            MENUITEM "&Noir et Blanc",              ID_NB
+            MENUITEM "Fausses &Couleurs",           ID_COULEUR
+            MENUITEM SEPARATOR
+            MENUITEM "&Palette",                    ID_AFFICHE_PALETTE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Zoom bitmap"
+        BEGIN
+            MENUITEM "25%",                         ID_ZOOM_25
+            MENUITEM "50%",                         ID_ZOOM_50
+            MENUITEM "100%",                        ID_ZOOM_100
+            MENUITEM SEPARATOR
+            MENUITEM "X %",                         ID_ZOOM_X
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Vue 3 D",                    ID_OUTILS_VUE3D
+        MENUITEM "Pseudo relief",               ID_OUTILS_PSEUDORELIEF
+    END
+    POPUP "Parzen 3D"
+    BEGIN
+        MENUITEM "Calcul des espaces de proba....", ID_PARZEN3D_CALCULDESESPACESDEPROBA
+        MENUITEM "Mesrure recouvrements avec CL 0", ID_PARZEN3D_MESRURERECOUVREMENTSAVECCL0
+        MENUITEM SEPARATOR
+        MENUITEM "Créer un espace de décision", ID_PARZEN3D_CRERUNESPACEDEDCISION
+        MENUITEM "Ouvrir un espace de décision", ID_PARZEN3D_OUVRIRUNESPACEDEDCISION
+        MENUITEM "Mesure de volume des classes", ID_PARZEN3D_MESUREDEVOLUMEDESCLASSES
+        MENUITEM "Sauvegarder un espace de décision", ID_PARZEN3D_SAUVEGARDERUNESPACEDEDCISION
+        MENUITEM SEPARATOR
+        MENUITEM "Visualiser l'espace de décision", ID_PARZEN3D_VISUALISERLESPACEDEDCISION
+    END
+    POPUP "&Décision"
+    BEGIN
+        MENUITEM "&Configuration de la décision", ID_DCISION_CONFIGURATIONDELADCISION
+        MENUITEM SEPARATOR
+        MENUITEM "&Décision sans masque",       ID_DCISION_DCISION
+        MENUITEM "Décision avec masque",        ID_DCISION_DCISIONAVECMASQUE
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 2 masques",          ID_DCISION_DCISION2MASQUES
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques Fixes",    ID_DCISION_DCISION3MASQUES
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques adapt.",   ID_DCISION_DCISION3MASQUESADAPT
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3masques CG",        ID_DCISION_DCISION3MASQUESCG
+        MENUITEM SEPARATOR
+        MENUITEM "Décision 3 masques sans rech", ID_DCISION_DCISION3MASQUESSANSRECH
+        MENUITEM SEPARATOR
+        MENUITEM "Decision 3 masques  adapt.enregist. centre", ID_DCISION_DECISION3MASQUESENREGIST
+        MENUITEM SEPARATOR
+        POPUP "Parzen"
+        BEGIN
+            MENUITEM "Decision Parzen+Circularité", ID_DCISION_DECISIONPARZENCIRCULARIT
+            MENUITEM "Décision enregistrée...",     ID_DCISION_PARZEN_DCISIONENREGISTRE
+            MENUITEM SEPARATOR
+            MENUITEM "Image Complète",              ID_DCISION_PARZEN_IMAGECOMPLTE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "visualisation polytopes (test)", ID_DCISION_TEST
+        MENUITEM "Remplissage de l'espace des param.", ID_DCISION_REMPLISSAGEDELESPACEDESPARAM
+        MENUITEM "remplissage de l'esp des param seq.", ID_DCISION_REMPLISSAGEDELESPDESPARAMSEQ
+        MENUITEM SEPARATOR
+        MENUITEM "test prob",                   ID_DCISION_TESTPROB
+        MENUITEM "Decide sur float (debug)",    ID_DCISION_DECIDESURFLOATDEBUG
+        MENUITEM "Genere fichier dat",          ID_DCISION_GENEREFICHIERDAT
+        MENUITEM "Decide SVM",                  ID_DCISION_DECIDESVM
+        MENUITEM "generedata",                  ID_DCISION_GENEREDATA
+    END
+    POPUP "&Apprentissage"
+    BEGIN
+        MENUITEM "&Projet...",                  ID_APPRENTISSAGE_GNRERUNPROJET
+        POPUP "Paramètres..."
+        BEGIN
+            MENUITEM "Définir les paramètres",      ID_APPRENTISSAGE_DFINIRLESPARAMTRES
+            MENUITEM "Visualisation Paramètres",    ID_PARAMTRAGE_VISUALISATIONPARAMTRES
+        END
+        MENUITEM "&Générer le fichier d'apprentissage", ID_APPRENTISSAGE_GNRERLEFICHIERDAPPRENTISSAGE
+        MENUITEM SEPARATOR
+        MENUITEM "Construire un fichier de mesures multi-classes", ID_APPRENTISSAGE_CONSTRUIRELEFICHIERMULTICLASSES
+        MENUITEM "Visualisation des mesures",   ID_PARAMTRAGE_VISUALISATIONMESOUPOL
+        MENUITEM SEPARATOR
+        MENUITEM "Générer un Fichier polytopes multi-classes", ID_APPRENTISSAGE_GNRERUNFICHIERPOLYTOPESMULTICLASSES
+    END
+    POPUP "&Masque"
+    BEGIN
+        MENUITEM "Rechercher seuil",            ID_MASQUE_RECHERCHER
+        MENUITEM "Rechercher à la main",        ID_MASQUE_LAMAIN
+        MENUITEM SEPARATOR
+        MENUITEM "Annuler Masque",              ID_MASQUE_ANNULER
+        MENUITEM "Supprimer Masque",            ID_TRAITEMENT_SUPPRIMER
+        MENUITEM SEPARATOR
+        POPUP "Calculs globaux"
+        BEGIN
+            MENUITEM "Contraste ",                  ID_MASQUE_CONTRASTE
+            MENUITEM "Max-min",                     ID_MASQUE_MAXMIN
+            MENUITEM "Entropie",                    ID_MASQUE_ENTROPIE
+            MENUITEM "Luminance moyenne",           ID_MASQUE_LUMINANCEMOYENNE
+            MENUITEM "Gradient moyen",              ID_MASQUE_GRADIENTMOYEN
+            MENUITEM "Dimensions",                  ID_MASQUE_DIMENSIONS
+            MENUITEM SEPARATOR
+            MENUITEM "Tous...",                     ID_MASQUE_TOUS
+        END
+        POPUP "Calculs locaux"
+        BEGIN
+            MENUITEM "Contraste",                   ID_MASQUE_LOCAUXCONTRASTE
+            MENUITEM "Max-min",                     ID_MASQUE_CALCULSLOCAUX_MAXMIN
+            MENUITEM "Entropie",                    ID_MASQUE_CALCULSLOCAUX_ENTROPIE
+            MENUITEM "Luminance moyenne",           ID_MASQUE_CALCULSLOCAUX_LUMINANCEMOYENNE
+            MENUITEM "Gradient moyen",              ID_MASQUE_CALCULSLOCAUX_GRADIENTMOYEN
+            MENUITEM SEPARATOR
+            MENUITEM "Tous",                        ID_MASQUE_CALCULSLOCAUX_TOUS
+        END
+        MENUITEM "Inversion",                   ID_MASQUE_INVERSION
+        MENUITEM SEPARATOR
+        MENUITEM "Nombre de pixels",            ID_MASQUE_NBPIXELS
+        MENUITEM "Histogramme",                 ID_MASQUE_HISTOGRAMME
+        MENUITEM SEPARATOR
+        POPUP "Badigeon segmentation"
+        BEGIN
+            MENUITEM "essai",                       ID_MASQUE_ESSAI
+            MENUITEM "essai2",                      ID_MASQUE_ESSAI2
+            MENUITEM "essai3",                      ID_MASQUE_ESSAI3
+            MENUITEM "essai4",                      ID_MASQUE_ESSAI4
+            MENUITEM "essai5",                      ID_MASQUE_ESSAI5
+            MENUITEM "essai6",                      ID_MASQUE_ESSAI6
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "chiffres de texture...",      ID_CALCUL_TEXTURE
+        MENUITEM SEPARATOR
+        MENUITEM "Découpage",                   ID_MASQUE_DCOUPAGE
+        MENUITEM "Caract. éclair.",             ID_CARACTECLAIR
+        MENUITEM SEPARATOR
+        MENUITEM "Caractérisation global",      ID_MASQUE_CARACTRISATIONGLOBAL
+        MENUITEM "Caractérisation Masque fixe", ID_MASQUE_MASQUEFIXE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+    POPUP "Curvilinear Detector"
+    BEGIN
+        POPUP "Tools"
+        BEGIN
+            MENUITEM "RUN",                         ID_OUTILS_SUIVIDECONTOURS
+            MENUITEM "Configuration",               ID_OUTILS_PARAMCURVIDETECT
+            POPUP "Matching"
+            BEGIN
+                MENUITEM "Selection 3 points",          ID_MATCHING_SELECTION3POINTS
+                MENUITEM "Selection 4 points",          ID_MATCHING_SELECTION4POINTS
+                POPUP "Transformation Image"
+                BEGIN
+                    MENUITEM "Param Transformation",        ID_TRANSFORMATIONIMAGE_PARAMTRANSFORMATION
+                    MENUITEM "RUN (Affine)",                ID_TRANSFORMATIONIMAGE_RUN
+                    MENUITEM "RUN (Homograph)",             ID_TRANSFORMATIONIMAGE_RUN506
+                END
+                MENUITEM "Calcul matrice passage (Affines)", ID_MATCHING_CALCULMATRICEPASSAGE
+                MENUITEM "Calcul matrice passage (Homographie)", ID_MATCHING_CALCULMATRICEPASSAGE504
+                MENUITEM "Repetabilité",                ID_MATCHING_REPETABILIT507
+            END
+        END
+    END
+END
+
+IDR_ACQIMAGECOLOR MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver",                      ID_SAUVER
+        MENUITEM "&Sauvegarder sous...\tCtrl+S", ID_SAUVER_SOUS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE2
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE3
+        MENUITEM "Reccent File",                ID_FILE_MRU_FILE4
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Restaurer l'image",          169
+        MENUITEM SEPARATOR
+        POPUP "&Sélection d'une zone"
+        BEGIN
+            MENUITEM "Avec la &Souris",             ID_ZONE
+            MENUITEM "Avec le &Clavier",            ID_ZONE_MANUELLE
+        END
+    END
+    POPUP "&Acquérir"
+    BEGIN
+        MENUITEM "&Snap",                       IDR_IMAGE1
+        MENUITEM "&Grab",                       ID_GRAB
+        MENUITEM "&Freeze",                     IDR_COLOR
+    END
+    POPUP "&Traitement"
+    BEGIN
+        POPUP "Séparation des couleurs"
+        BEGIN
+            MENUITEM "R G B",                       ID_COLOR
+            MENUITEM "Luminance Y (0.3 0.59 0.11)", ID_LUMCHRO
+            MENUITEM "Chrominance R-Y et B-Y",      ID_CHROMINANCE
+        END
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+END
+
+IDR_FLOAT MENU 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "Ouvrir une &Image",           ID_IMAGE
+        MENUITEM "Ouvrir une image &Vide",      ID_IMAGEVIDE
+        MENUITEM "Ouvrir une &Séquence d'images", ID_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauver",                      ID_SAUVER
+        MENUITEM "&Sauvegarder sous...\tCtrl+S", ID_SAUVER_SOUS
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Restaurer l'image",          169
+        MENUITEM SEPARATOR
+        POPUP "&Sélection d'une zone"
+        BEGIN
+            MENUITEM "Avec la &Souris",             ID_ZONE
+            MENUITEM "Avec le &Clavier",            ID_ZONE_MANUELLE
+        END
+    END
+    POPUP "Analyse"
+    BEGIN
+        POPUP "Analyse multirésolutions"
+        BEGIN
+            MENUITEM "Ondelette de HAAR",           ID_HAAR_FLOAT
+            MENUITEM "Ondelette B-Splines Cubiques", ID_SPLINE_FLOAT
+            MENUITEM SEPARATOR
+            MENUITEM "Reconstruction",              ID_RECONSTRUCT
+            MENUITEM "Extraction des détails",      ID_CONT
+            MENUITEM "Extraction des Vij",          ID_BASSE
+            MENUITEM "Extraction multi-échelles (HF)", ID_MULTI_ECHELLE
+            MENUITEM "Extrapolation ",              ID_EXTRA_PAUL
+            MENUITEM SEPARATOR
+            MENUITEM "Affecter l'échelle",          ID_AFFECTER_ECHELLE
+        END
+    END
+    POPUP "&Outils"
+    BEGIN
+        POPUP "Créer une copie"
+        BEGIN
+            MENUITEM "En Byte",                     ID_COPIE_EN_BYTE
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Coupe"
+        BEGIN
+            MENUITEM "&Horizontale",                ID_HORIZONTALE
+            MENUITEM "&Verticale",                  ID_VERTICALE
+            MENUITEM "&Oblique",                    ID_OBLIQUE
+        END
+        POPUP "&Information"
+        BEGIN
+            MENUITEM "&Histogramme",                ID_HISTOGRAMME
+            MENUITEM "&Fonction de répartition",    ID_FONCTION_REPARTITION
+            MENUITEM SEPARATOR
+            MENUITEM "&Information générale",       ID_INFO_GENERALE
+            MENUITEM "Info sur Traitement effectué", ID_INFO_IMAGE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Palette"
+        BEGIN
+            MENUITEM "&Noir et Blanc",              ID_NB
+            MENUITEM "Fausses &Couleurs",           ID_COULEUR
+            MENUITEM SEPARATOR
+            MENUITEM "&Palette",                    ID_AFFICHE_PALETTE
+        END
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close &All",                  ID_CLOSE
+    END
+END
+
+IDR_MESPOL MENU 
+BEGIN
+    POPUP "&Visualisation"
+    BEGIN
+        MENUITEM "Info Mesures",                ID_VISUALISATION_INFOMESURES
+        MENUITEM SEPARATOR
+        MENUITEM "&Choix des parametres",       ID_VISUALISATION_CHOIXDESPARAMETRES
+        MENUITEM SEPARATOR
+        MENUITEM "Choix d'un fichier de polytopes", ID_VISUALISATION_CHOIXDUNFICHIERDEPOLYTOPES
+        MENUITEM "Visualiser les polytopes",    ID_VISUALISATION_VISUALISERLESPOLYTOPES
+        MENUITEM "Info polytopes",              ID_VISUALISATION_INFOPOLYTOPES
+        MENUITEM SEPARATOR
+        MENUITEM "ToolBar",                     ID_VISUALISATION_TOOLBAR
+    END
+    POPUP "&Calculs"
+    BEGIN
+        MENUITEM "Choix de classes",            ID_CALCULS_CHOIXDECLASSES
+        MENUITEM SEPARATOR
+        POPUP "&Parzen"
+        BEGIN
+            MENUITEM "Calcul",                      ID_PARZEN
+            MENUITEM SEPARATOR
+            MENUITEM "Calcul  de tous les paramètres dans...", ID_PARZEN_CALCULDETOUS
+        END
+        POPUP "Correlation"
+        BEGIN
+            MENUITEM "Calcul",                      ID_CORRELATION_CALCUL
+            MENUITEM SEPARATOR
+            MENUITEM "Calcul dans...",              ID_CORRELATION_CALCULDANS
+        END
+    END
+    MENUITEM "Quitter",                     ID_FICHIER_QUITTER
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaique",                   ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Close Graphics",              ID_WINDOW_CLOSEGRAPHICS
+    END
+END
+
+IDR_VUE3D MENU 
+BEGIN
+    MENUITEM "",                            65535
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_LE2I                ICON                    ".\\res\\ICONLE2I.ICO"
+IDI_BMP                 ICON                    ".\\res\\ICONBMP.ICO"
+IDI_F32                 ICON                    ".\\res\\ICONF32.ICO"
+IDI_MEM                 ICON                    ".\\RES\\ICONMEM.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SPLASH              BITMAP                  ".\\res\\Splsh16.bmp"
+IDR_MAINFRAME           BITMAP                  ".\\res\\MAINFRAM.BMP"
+IDB_BITMAPTREE          BITMAP                  ".\\res\\bitmaptr.bmp"
+IDR_GRAPH               BITMAP                  ".\\res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_IMAGEVIDE
+    BUTTON      ID_IMAGE
+    BUTTON      ID_SAUVER_SOUS
+    SEPARATOR
+    BUTTON      ID_RESTAURE_IMAGE
+    SEPARATOR
+    BUTTON      ID_ZONE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_AFFICHE_PALETTE
+    BUTTON      ID_NB
+    BUTTON      ID_COULEUR
+    SEPARATOR
+    BUTTON      ID_INFO_IMAGE
+    SEPARATOR
+    BUTTON      ID_GRAB
+    BUTTON      ID_SNAP
+    BUTTON      ID_FREEZE
+    SEPARATOR
+    BUTTON      ID_HORIZONTALE
+    BUTTON      ID_VERTICALE
+    BUTTON      ID_OBLIQUE
+    SEPARATOR
+    BUTTON      ID_VISUALISATION_CHOIXDESPARAMETRES
+    BUTTON      ID_VISUALISATION_VISUALISERLESPOLYTOPES
+    BUTTON      ID_PARZEN
+    SEPARATOR
+    BUTTON      ID_DCISION_DCISION
+    SEPARATOR
+    BUTTON      ID_DCISION_DCISIONAVECMASQUE
+    SEPARATOR
+    BUTTON      ID_DCISION_DCISION2MASQUES
+END
+
+IDR_GRAPH TOOLBAR  19, 17
+BEGIN
+    BUTTON      ID_COUPE_OPTIONS_CURSEUR
+    BUTTON      ID_OPTIONS_ZOOM
+    BUTTON      ID_INFORMATION
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    VK_F7,          ID_COLOR_CURVI,         VIRTKEY, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_SAUVER,              VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_TRAITEMENT_CENTRE,   VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          ID_TRAITEMENT_CONTOURPETROU, VIRTKEY, NOINVERT
+    VK_F6,          ID_TRAITEMENT_CURVILINEAR, VIRTKEY, NOINVERT
+    VK_F10,         ID_OUTILS_SUIVIDECONTOURS, VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_RECT                CURSOR                  ".\\res\\cursor1.cur"
+IDC_CURSOR1             CURSOR                  ".\\res\\cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING1             """bonjour"""
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open This docuement"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_TOOLBAR         "Affichage de la barre d'outils"
+    ID_MOYENNEURX111        "Filtre Moyenneur X111 \n Moy X111"
+    ID_MOYENNEURY111        "Filtre Moyenneur Y111 \n Moy Y111"
+    ID_MOYENNEURXY121       "Filtre Moyenneur XY121 \n Moy XY121"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SAUVER               "Sauve l'image active \n Sauver"
+    ID_GRAB                 "Acquisition en continue \n GRAB"
+    ID_SNAP                 "Capture d'une image figée \n SNAP"
+    ID_FREEZE               "Capture d'une image figée \n FREEZE"
+    ID_ZONE                 "Sélection d'une zone à la souris \n Zone Souris"
+    ID_NB                   "Palette N&B \n Palette N&B"
+    ID_COULEUR              "Palette Couleur \n Palette Couleur"
+    ID_AFFICHE_PALETTE      "Affiche Palette \n Affiche Palette"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INFO_IMAGE           "INFO Traitement \n INFO Traitement"
+    ID_CONTOUR_SEUILLAGE3HYSTERESIS 
+                            "Seuillage par hysteresis et suivi de contours \n SEUIL HYSTERESIS"
+    ID_SOMMET_GALET         "Visualisation de l'axe des galets forgeurs \n AXE Galets Forgeurs"
+    ID_TH_DROITE            "Détection de droite par T.Hough \n T. HOUGH"
+    ID_ETIQUETTAGE_MAX      "Etiquettage des formes et recherche des maximum de chaque forme \n Etiquettage et MAX"
+    ID_ETIQUETTAGE_CG       "Etiquettage des formes de l'image et Centres de Gravité \n Etiquettage et CG"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VPS_GRAD_ALONGX      "Gradient VPS suivant X \n GradVPS (X)"
+    ID_VPS_GRAD_ALONGY      "Gradient VPS suivant Y \n GradVPS (Y)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_IMAGEVIDE            "Ouverture d'une image vide \n Image Vide"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_HORIZONTALE          "Visualisation d'une coupe horizontale de l'image \n Coupe HORIZONTALE"
+    ID_VERTICALE            "Visualisation d'une coupe verticale de l'image \n Coupe VERTICALE"
+    ID_OBLIQUE              "Visualisation d'une coupe oblique de l'image \n Coupe OBLIQUE"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VPS_GRADIENT_VISU    "Visualisation des sommets du vé \n VISU VE"
+    ID_VPS_CONTIY_FILTER    "Filtrage continu suivant Y - Elimination des creux \n Filtre CONTINUY"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_AMINCISSEMENT        "Amincissement morphologique \n Amincissement"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_RESTAURE_IMAGE       "Restaure l'image \n Restaurer"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TRAITEMENT_SUPPRIMER "Supprime la zone de l'image \n Supprimer Zone"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_COPY            "Copy to ClipBoard \n Copier"
+    ID_EDIT_CUT             "Cut tu clipboard \n Couper"
+    ID_EDIT_PASTE           "Coller le Presse-Papier \n Coller"
+    CG_IDS_PROGRESS_CAPTION "calculs en cours..."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_PRINT           "Impression de l'image active \n Imprimer"
+    ID_FILE_PRINT_PREVIEW   "Aperçu avant impression \n Aperçu"
+END
+
+#endif    // Français (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

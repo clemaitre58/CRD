@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utls", "utls\utls\utls.vcproj", "{77BD6244-4E68-4AB7-82BD-2D55BC230AA2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "curvlinear", "curvilinear\curvilinear\curvlinear.vcproj", "{B51FEB0B-E33E-4F06-A704-8BCA784E9790}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2} = {77BD6244-4E68-4AB7-82BD-2D55BC230AA2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "curvidet", "curvidet\curvidet\curvidet.vcproj", "{108F357D-8664-4AC6-870C-9B32253C1C1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2} = {77BD6244-4E68-4AB7-82BD-2D55BC230AA2}
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790} = {B51FEB0B-E33E-4F06-A704-8BCA784E9790}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shapectx", "curvidet\shapectx\shapectx.vcproj", "{AAA6C246-B7FF-411D-99BA-E3BDE1E99629}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2} = {77BD6244-4E68-4AB7-82BD-2D55BC230AA2}
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790} = {B51FEB0B-E33E-4F06-A704-8BCA784E9790}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MEX", "MEX", "{0C8862BC-BF13-418C-84B2-771FC7C42760}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cd_overlap", "curvidet\cd_overlap\cd_overlap.vcproj", "{DE41FFD0-D293-425F-82E8-9ECEACBDC05B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mmatch", "curvidet\mmatch\mmatch.vcproj", "{09B252E5-C272-415B-9A58-78926AF2E0E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2} = {77BD6244-4E68-4AB7-82BD-2D55BC230AA2}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2}.Debug|Win32.Build.0 = Debug|Win32
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2}.Release|Win32.ActiveCfg = Release|Win32
+		{77BD6244-4E68-4AB7-82BD-2D55BC230AA2}.Release|Win32.Build.0 = Release|Win32
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790}.Debug|Win32.Build.0 = Debug|Win32
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790}.Release|Win32.ActiveCfg = Release|Win32
+		{B51FEB0B-E33E-4F06-A704-8BCA784E9790}.Release|Win32.Build.0 = Release|Win32
+		{108F357D-8664-4AC6-870C-9B32253C1C1E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{108F357D-8664-4AC6-870C-9B32253C1C1E}.Debug|Win32.Build.0 = Debug|Win32
+		{108F357D-8664-4AC6-870C-9B32253C1C1E}.Release|Win32.ActiveCfg = Release|Win32
+		{108F357D-8664-4AC6-870C-9B32253C1C1E}.Release|Win32.Build.0 = Release|Win32
+		{AAA6C246-B7FF-411D-99BA-E3BDE1E99629}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AAA6C246-B7FF-411D-99BA-E3BDE1E99629}.Debug|Win32.Build.0 = Debug|Win32
+		{AAA6C246-B7FF-411D-99BA-E3BDE1E99629}.Release|Win32.ActiveCfg = Release|Win32
+		{AAA6C246-B7FF-411D-99BA-E3BDE1E99629}.Release|Win32.Build.0 = Release|Win32
+		{DE41FFD0-D293-425F-82E8-9ECEACBDC05B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DE41FFD0-D293-425F-82E8-9ECEACBDC05B}.Debug|Win32.Build.0 = Debug|Win32
+		{DE41FFD0-D293-425F-82E8-9ECEACBDC05B}.Release|Win32.ActiveCfg = Release|Win32
+		{DE41FFD0-D293-425F-82E8-9ECEACBDC05B}.Release|Win32.Build.0 = Release|Win32
+		{09B252E5-C272-415B-9A58-78926AF2E0E0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09B252E5-C272-415B-9A58-78926AF2E0E0}.Debug|Win32.Build.0 = Debug|Win32
+		{09B252E5-C272-415B-9A58-78926AF2E0E0}.Release|Win32.ActiveCfg = Release|Win32
+		{09B252E5-C272-415B-9A58-78926AF2E0E0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AAA6C246-B7FF-411D-99BA-E3BDE1E99629} = {0C8862BC-BF13-418C-84B2-771FC7C42760}
+		{108F357D-8664-4AC6-870C-9B32253C1C1E} = {0C8862BC-BF13-418C-84B2-771FC7C42760}
+		{DE41FFD0-D293-425F-82E8-9ECEACBDC05B} = {0C8862BC-BF13-418C-84B2-771FC7C42760}
+		{09B252E5-C272-415B-9A58-78926AF2E0E0} = {0C8862BC-BF13-418C-84B2-771FC7C42760}
+	EndGlobalSection
+EndGlobal

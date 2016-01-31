@@ -1,0 +1,14 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=0
+External=0
+BrkptCount=1
+BrkptType1=0
+BrkptActive1=1
+BrkptAmbig1=0
+BrkptIndex1=-1
+BrkptLoc1={,c:\users\chris\msvc\dll\fourier.cpp,} .24
+WatchCount=3
+WatchExpr1=v
+WatchExpr2=v
+WatchExpr3=i
